@@ -1,0 +1,36 @@
+Part 3: Technical Questions
+1. Front-End: useState vs useReducer
+useState is used for simple, independent values like toggles or form fields.
+useReducer is better when the state logic is complex or involves multiple values and actions (like in a todo app).
+Use useState for basic state. Use useReducer when the state depends on previous values or has multiple conditions.
+
+2. Back-End: Handling CORS in Express
+CORS allows frontend and backend on different origins to communicate. In Express, we use the cors middleware.
+
+
+npm install cors
+
+const cors = require('cors');
+const app = require('express')();
+
+app.use(cors()); // allow all origins
+app.use(express.json());
+To allow only your frontend:
+
+
+app.use(cors({ origin: 'http://localhost:3000' }));
+3. SQL vs NoSQL Databases
+SQL (e.g., PostgreSQL) uses tables and fixed schemas. Best for structured data and complex queries.
+Example: Banking or Inventory systems.
+
+NoSQL (e.g., MongoDB) uses flexible JSON-like documents. Good for unstructured data and fast development.
+Example: Social media or chat apps.
+
+4. Debugging Performance in Full Stack Apps
+Frontend: Use browser dev tools to check slow renders, large assets, and network delays.
+
+Backend: Log API response times, check slow functions or database queries.
+
+Database: Analyze query performance, use indexes, and avoid heavy joins.
+
+Use tools like React Profiler, Postman, Lighthouse, or logs to identify the slow part and fix it step-by-step.
